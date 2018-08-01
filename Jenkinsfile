@@ -1,5 +1,13 @@
 pipeline {
   agent any
+  stage('Foo') {
+    steps {
+      script {
+          def now = new Date()
+          println now.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
+      }
+    } 
+  }
   stages {
     stage('Build') {
       steps {
