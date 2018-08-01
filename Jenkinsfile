@@ -7,6 +7,9 @@ pipeline {
       }
     }
     stage('Build') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Build 6 month'
         sh '''./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "1 month ago" "+%Y%m")??
