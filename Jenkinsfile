@@ -1,20 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Tests') {
       steps {
         sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "1 month ago" "+%Y%m")??'
       }
     }
-    stage('Tests') {
+    stage('Build') {
       steps {
-        echo 'Faire les tests'
-        sh '''ls
-ls report/
-cd ../
-ls
-cd ../
-ls'''
+        echo 'Build 6 month'
+        sh '''./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "1 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "2 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "3 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "4 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "5 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "6 month ago" "+%Y%m")??'''
       }
     }
     stage('Deploy') {
@@ -22,10 +22,33 @@ ls'''
         branch 'master'
       }
       steps {
-        sh '''mkdir report-test
-mkdir report-test/${BUILD_TIMESTAMP}
-cp -r report/${BUILD_TIMESTAMP}/ report-test/${BUILD_TIMESTAMP}/
-cp report/${BUILD_TIMESTAMP}.html report-test/${BUILD_TIMESTAMP}'''
+        sh '''mkdir -p report-test
+mkdir -p report-test/$(date -d "1 month ago" "+%Y%m")
+
+
+
+cp -r report/$(date -d "1 month ago" "+%Y%m")/ report-test/$(date -d "1 month ago" "+%Y%m")/
+cp report/$(date -d "1 month ago" "+%Y%m").html report-test/$(date -d "1 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "2 month ago" "+%Y%m")/ report-test/$(date -d "2 month ago" "+%Y%m")/
+cp report/$(date -d "2 month ago" "+%Y%m").html report-test/$(date -d "2 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "3 month ago" "+%Y%m")/ report-test/$(date -d "3 month ago" "+%Y%m")/
+cp report/$(date -d "3 month ago" "+%Y%m").html report-test/$(date -d "3 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "4 month ago" "+%Y%m")/ report-test/$(date -d "4 month ago" "+%Y%m")/
+cp report/$(date -d "4 month ago" "+%Y%m").html report-test/$(date -d "4 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "5 month ago" "+%Y%m")/ report-test/$(date -d "5 month ago" "+%Y%m")/
+cp report/$(date -d "5 month ago" "+%Y%m").html report-test/$(date -d "5 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "6 month ago" "+%Y%m")/ report-test/$(date -d "6 month ago" "+%Y%m")/
+cp report/$(date -d "6 month ago" "+%Y%m").html report-test/$(date -d "6 month ago" "+%Y%m")'''
       }
     }
   }
