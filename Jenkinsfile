@@ -23,9 +23,9 @@ ls'''
       }
       steps {
         sh '''mkdir report-test
-mkdir report-test/201805
-cp -r report/201805/ report-test/201805/
-cp report/201805.html report-test/201805'''
+mkdir report-test/${BUILD_TIMESTAMP}
+cp -r report/${BUILD_TIMESTAMP}/ report-test/${BUILD_TIMESTAMP}/
+cp report/${BUILD_TIMESTAMP}.html report-test/${BUILD_TIMESTAMP}'''
       }
     }
   }
