@@ -18,6 +18,9 @@ ls'''
       }
     }
     stage('Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         sh '''mkdir report-test
 mkdir report-test/201805
