@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './hydra-report.py  accounting/201805??'
+        sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/201805??'
       }
     }
     stage('Tests') {
