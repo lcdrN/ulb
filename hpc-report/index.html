@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hydra Report</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/plugins/timeline/timeline.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/dashboard.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="../assets/plugins/card/css/chartist.min.css" rel="stylesheet">
+    <link href="../assets/plugins/card/css/responsive-grid.min.css" rel="stylesheet">
+    <link href="../assets/plugins/card/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style5.css" rel="stylesheet">
+    <link href="../assets/plugins/card/js/src/css/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="../assets/plugins/switch/css/switcher.css"  rel="stylesheet">
+    
+  </head>
+
+  <body>
+
+      <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <!-- <h3>ULB-VUB Hydra</h3> -->
+                <a href="https://hpc.ulb.be/index.php" target="_blank"><img  src="../assets/img/sisc-hpc-logo.png" style="background-color: white; width:100%"/></a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#" id="home_tab"><span data-feather="home"></span>
+                    Home</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span data-feather="cpu"></span> 
+                    Jobs</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                      <input class="form-control form-control" id="search" type="text" placeholder="Search" aria-label="Search">
+                        {1}
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://hpc.ulb.be/documentation/index.html" target="_blank" class="download">
+                      <span data-feather="file-text"></span>
+                      Documentation
+                    </a>
+                </li>
+                <li>
+                    <a href="https://hpc.ulb.be/hydra.php" target="_blank" class="download">
+                      <span data-feather="sliders"></span>
+                      Limits
+                    </a>
+                </li>
+                <li>
+                    <a href="https://hpc.ulb.be/contact.php" target="_blank" class="download">
+                      <span data-feather="edit-2"></span>
+                      Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h2 class="title" id="title" date="{2}"></h2>
+                </div>
+            </nav>
+
+        <main role="main" class="col-md-12 ml-sm-5 col-lg-12">
+          <!-- Container Home -->
+          <div id="home">
+<!--             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h2 class="title" id="title" date="{2}"></h2>
+            </div> -->
+            <!-- Queue Stats -->
+            <div id="num" style="position:relative;"></div>
+            <!-- Average Counter -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h2 class="title" id="title_average">Average of resources used by all the jobs over all the resources requested</h2>
+                <!-- Rounded switch -->
+              <div>
+                <div class="form-switcher form-switcher-lg form-switcher-sm-phone">
+                  <input type="checkbox" name="switcher-lg" id="switcher-lg" checked="checked">
+                  <label class="switcher" for="switcher-lg"></label>
+                </div>
+              </div>
+
+            </div>
+            <div id="plugin" style="position:relative;"></div>
+            <!-- Bar chart -->
+            <div id="pluginChart" style="position:relative;" value="{0}"></div>
+          </div>
+          <!-- End Container Home -->
+     
+
+          <!-- Container Job -->
+          <div class="bg-color-light" id="job" style="display:none;">
+            
+              <div style="height: auto;">
+                <h2 class="title-v2 title-center" id="job_name" style="text-align: center"></h2>
+                <!-- Small card (Exit_code, Nodes, cores, Time Queue) -->
+                <div id="smallcard" style="position:relative;"></div>
+                <!---->
+                <div class="w-100"></div>
+                <div class="col">
+                  <div id="" style="position:relative;">
+                    <div class="s-g-container" style="min-height: 170px;">
+                      <div class="s-g-row">
+                        <div class="s-g-col-12">
+                          <div class="at-card">
+                            <div class="card-header card-chart" style="background: white;">
+                              <div class="ct-chart" style="position: relative;">
+                                <!-- TimeLine -->
+                                <div class="Timeline" style="margin-left: 100px; margin-right: 110px;">
+                                  <!-- Date 1 -->
+                                  <div class="event1">
+                                    <div class="event1Bubble">
+                                      <div class="eventTime">
+                                        <div class="DayDigit">02</div>
+                                        <div class="Day"> Wednesday
+                                          <div class="MonthYear">february 2015</div>
+                                        </div>
+                                      </div>
+                                      <div class="eventTitle">Job Started</div>
+                                    </div>
+                                    <svg height="20" width="20">
+                                      <circle cx="10" cy="11" r="5" fill="#004165" />
+                                    </svg>
+                                    <div class="time">9 : 27 AM</div>    
+                                  </div>
+                                  <!-- End Date 1 -->
+                                   
+                                  <!-- Line Date 1 to Date 2 -->  
+                                  <svg height="5" id="dist">
+                                    <line x1="0" y1="0" x2="500" y2="0" style="stroke:#004165;stroke-width:5" / id="d" />
+                                    Sorry, your browser does not support inline SVG.
+                                  </svg>
+                                  <!-- End  -->
+
+                                  <!-- Date 2 -->
+                                  <div class="event2">    
+                                    <div class="event2Bubble">
+                                      <div class="eventTime">
+                                        <div class="DayDigit">17</div>
+                                        <div class="Day"> Thursday
+                                          <div class="MonthYear">April 2016</div>
+                                        </div>
+                                      </div>
+                                      <div class="eventTitle">Job Finished</div>
+                                    </div>
+                                    <svg height="20" width="20">
+                                      <circle cx="10" cy="11" r="5" fill="#004165" />
+                                    </svg>
+                                    <div class="time2">1 : 32 PM</div>
+                                  </div>
+                                  <!-- End Date 2 -->
+                                      
+                                  <!-- Line Date 2 to Date 3 -->
+                                  <svg height="5" id="dist2" >
+                                    <line x1="0" y1="0" x2="500" y2="0" style="stroke:rgba(200, 0, 0, 0.47);stroke-width:5" id="d2"/>
+                                    Sorry, your browser does not support inline SVG.
+                                  </svg>
+                                  <!-- End -->
+
+                                  <!-- Date 3 -->
+                                  <div class="event3 futureGray ">
+                                    <div class="event1Bubble futureOpacity">
+                                      <div class="eventTime">
+                                        <div class="DayDigit">05</div>
+                                        <div class="Day"> Tuesday
+                                          <div class="MonthYear">May 2016</div>
+                                        </div>
+                                      </div>
+                                      <div class="eventTitle">Requested Walltime</div>
+                                    </div>
+                                    <svg height="20" width="20">
+                                      <circle cx="10" cy="11" r="5" fill="#004165" />
+                                    </svg>
+                                    <div class="time">9 : 27 AM</div>
+                                  </div>
+                                  <!-- End Date 3 --> 
+
+                                </div>
+                                <!-- End TimeLine -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Counter job -->
+                <div id="plugin_usage" style="position:relative;"></div>
+              </div>
+         
+          </div>
+          <!-- End Container Job -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/feather.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <!-- JS Page Level -->
+    <script type="text/javascript" src="../assets/js/report.js"></script>
+    <script type="text/javascript" src="../assets/js/System.js"></script>
+    <script type="text/javascript" src="../assets/js/Job.js"></script>
+    <script type="text/javascript" src="../assets/js/View.js"></script>
+    <script type="text/javascript" src="../assets/js/Utils.js"></script>
+    <script src="../assets/plugins/card/lib/chartist.min.js"></script>
+    <script src="../assets/plugins/card/js/chartist-plugin-fill-donut.js"></script>
+    <script src="../assets/plugins/card/js/chartist-plugin-tooltip.js"></script>
+    <script src="../assets/plugins/card/js/script.js"></script>
+    
+  </body>
+</html>
