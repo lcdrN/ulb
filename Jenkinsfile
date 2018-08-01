@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''date= expr ${BUILD_TIMESTAMP} - 1
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/${date}??'''
+        sh '''$date= expr ${BUILD_TIMESTAMP} - 1
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$date??'''
       }
     }
     stage('Tests') {
