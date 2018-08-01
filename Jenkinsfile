@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Tests') {
       steps {
-        sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "2 month ago" "+%Y%m")??'
+        sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "12 month ago" "+%Y%m")??'
       }
     }
     stage('Build') {
@@ -12,12 +12,12 @@ pipeline {
       }
       steps {
         echo 'Build 6 month'
-        sh '''./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "1 month ago" "+%Y%m")??
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "2 month ago" "+%Y%m")??
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "3 month ago" "+%Y%m")??
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "4 month ago" "+%Y%m")??
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "5 month ago" "+%Y%m")??
-./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "6 month ago" "+%Y%m")??'''
+        sh '''./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "11 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "12 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "13 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "14 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "15 month ago" "+%Y%m")??
+./hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/$(date -d "16 month ago" "+%Y%m")??'''
       }
     }
     stage('Deploy') {
@@ -26,32 +26,32 @@ pipeline {
       }
       steps {
         sh '''mkdir -p report-test
-mkdir -p report-test/$(date -d "1 month ago" "+%Y%m")
+mkdir -p report-test/$(date -d "11 month ago" "+%Y%m")
 
 
 
-cp -r report/$(date -d "1 month ago" "+%Y%m")/ report-test/$(date -d "1 month ago" "+%Y%m")/
-cp report/$(date -d "1 month ago" "+%Y%m").html report-test/$(date -d "1 month ago" "+%Y%m")
+cp -r report/$(date -d "11 month ago" "+%Y%m")/ report-test/$(date -d "11 month ago" "+%Y%m")/
+cp report/$(date -d "11 month ago" "+%Y%m").html report-test/$(date -d "11 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "2 month ago" "+%Y%m")/ report-test/$(date -d "2 month ago" "+%Y%m")/
-cp report/$(date -d "2 month ago" "+%Y%m").html report-test/$(date -d "2 month ago" "+%Y%m")
+cp -r report/$(date -d "12 month ago" "+%Y%m")/ report-test/$(date -d "12 month ago" "+%Y%m")/
+cp report/$(date -d "12 month ago" "+%Y%m").html report-test/$(date -d "12 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "3 month ago" "+%Y%m")/ report-test/$(date -d "3 month ago" "+%Y%m")/
-cp report/$(date -d "3 month ago" "+%Y%m").html report-test/$(date -d "3 month ago" "+%Y%m")
+cp -r report/$(date -d "13 month ago" "+%Y%m")/ report-test/$(date -d "13 month ago" "+%Y%m")/
+cp report/$(date -d "13 month ago" "+%Y%m").html report-test/$(date -d "13 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "4 month ago" "+%Y%m")/ report-test/$(date -d "4 month ago" "+%Y%m")/
-cp report/$(date -d "4 month ago" "+%Y%m").html report-test/$(date -d "4 month ago" "+%Y%m")
+cp -r report/$(date -d "14 month ago" "+%Y%m")/ report-test/$(date -d "14 month ago" "+%Y%m")/
+cp report/$(date -d "14 month ago" "+%Y%m").html report-test/$(date -d "14 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "5 month ago" "+%Y%m")/ report-test/$(date -d "5 month ago" "+%Y%m")/
-cp report/$(date -d "5 month ago" "+%Y%m").html report-test/$(date -d "5 month ago" "+%Y%m")
+cp -r report/$(date -d "15 month ago" "+%Y%m")/ report-test/$(date -d "15 month ago" "+%Y%m")/
+cp report/$(date -d "15 month ago" "+%Y%m").html report-test/$(date -d "15 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "6 month ago" "+%Y%m")/ report-test/$(date -d "6 month ago" "+%Y%m")/
-cp report/$(date -d "6 month ago" "+%Y%m").html report-test/$(date -d "6 month ago" "+%Y%m")'''
+cp -r report/$(date -d "16 month ago" "+%Y%m")/ report-test/$(date -d "16 month ago" "+%Y%m")/
+cp report/$(date -d "16 month ago" "+%Y%m").html report-test/$(date -d "16 month ago" "+%Y%m")'''
       }
     }
   }
