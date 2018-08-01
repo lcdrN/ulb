@@ -1,18 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Foo') {
-      steps {
-        script {
-          def now = new Date()
-          println now.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
-        }
-
-      }
-    }
     stage('Build') {
       steps {
-        sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/201805??'
+        sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/${BUILD_TIMESTAMP}??'
       }
     }
     stage('Tests') {
