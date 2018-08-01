@@ -1,6 +1,7 @@
 pipeline {
   agent any
-  stage('Foo') {
+  stages {
+      stage('Foo') {
     steps {
       script {
           def now = new Date()
@@ -8,7 +9,6 @@ pipeline {
       }
     } 
   }
-  stages {
     stage('Build') {
       steps {
         timestamps()
