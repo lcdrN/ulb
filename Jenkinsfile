@@ -10,6 +10,7 @@ pipeline {
       steps {
         echo 'Faire les tests'
         sh '''ls
+ls report/
 cd ../
 ls
 cd ../
