@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        timestamps()
         sh './hydra-report.py  /home/noe/Desktop/script/sisc-scripts/accounting/201805??'
       }
     }
