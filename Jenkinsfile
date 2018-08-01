@@ -18,8 +18,8 @@ ls'''
     }
     stage('Deploy') {
       steps {
-        sh '''cp /report/201805/ /report-test/201805/
-cp /report/201805.html /report-test/201805'''
+        sh '''cp report/201805/ report-test/201805/
+cp report/201805.html report-test/201805'''
       }
     }
   }
