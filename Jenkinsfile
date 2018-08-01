@@ -25,7 +25,9 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh '''cp -r report/$(date -d "11 month ago" "+%Y%m")/ report-test/$(date -d "11 month ago" "+%Y%m")/
+        sh '''mkdir -p report-test/
+
+cp -r report/$(date -d "11 month ago" "+%Y%m")/ report-test/$(date -d "11 month ago" "+%Y%m")/
 cp report/$(date -d "11 month ago" "+%Y%m").html report-test/$(date -d "11 month ago" "+%Y%m")
 
 
