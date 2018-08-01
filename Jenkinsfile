@@ -9,6 +9,7 @@ pipeline {
     stage('Tests') {
       steps {
         echo 'Faire les tests'
+        sh 'ls'
       }
     }
     stage('Deploy') {
