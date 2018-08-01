@@ -25,30 +25,30 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh '''mkdir -p report-test/
+        sh '''mkdir -p /home/hydra/reports/users/monthly
 
-cp -r report/$(date -d "1 month ago" "+%Y%m")/ report-test/$(date -d "1 month ago" "+%Y%m")/
-cp report/$(date -d "1 month ago" "+%Y%m").html report-test/$(date -d "1 month ago" "+%Y%m")
-
-
-cp -r report/$(date -d "2 month ago" "+%Y%m")/ report-test/$(date -d "2 month ago" "+%Y%m")/
-cp report/$(date -d "2 month ago" "+%Y%m").html report-test/$(date -d "2 month ago" "+%Y%m")
+cp -r report/$(date -d "1 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")/
+cp report/$(date -d "1 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "3 month ago" "+%Y%m")/ report-test/$(date -d "3 month ago" "+%Y%m")/
-cp report/$(date -d "3 month ago" "+%Y%m").html report-test/$(date -d "3 month ago" "+%Y%m")
+cp -r report/$(date -d "2 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "2 month ago" "+%Y%m")/
+cp report/$(date -d "2 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "2 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "4 month ago" "+%Y%m")/ report-test/$(date -d "4 month ago" "+%Y%m")/
-cp report/$(date -d "4 month ago" "+%Y%m").html report-test/$(date -d "4 month ago" "+%Y%m")
+cp -r report/$(date -d "3 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "3 month ago" "+%Y%m")/
+cp report/$(date -d "3 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "3 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "5 month ago" "+%Y%m")/ report-test/$(date -d "5 month ago" "+%Y%m")/
-cp report/$(date -d "5 month ago" "+%Y%m").html report-test/$(date -d "5 month ago" "+%Y%m")
+cp -r report/$(date -d "4 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "4 month ago" "+%Y%m")/
+cp report/$(date -d "4 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "4 month ago" "+%Y%m")
 
 
-cp -r report/$(date -d "6 month ago" "+%Y%m")/ report-test/$(date -d "6 month ago" "+%Y%m")/
-cp report/$(date -d "6 month ago" "+%Y%m").html report-test/$(date -d "6 month ago" "+%Y%m")'''
+cp -r report/$(date -d "5 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "5 month ago" "+%Y%m")/
+cp report/$(date -d "5 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "5 month ago" "+%Y%m")
+
+
+cp -r report/$(date -d "6 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m")/
+cp report/$(date -d "6 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m")'''
       }
     }
   }
