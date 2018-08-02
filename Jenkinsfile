@@ -12,12 +12,12 @@ pipeline {
       }
       steps {
         echo 'Build 6 month'
-        sh '''./hydra-report.py  /home/hydra/torque/accounting/$(date -d "1 month ago" "+%Y%m")??
-./hydra-report.py  /home/hydra/torque/accounting/$(date -d "2 month ago" "+%Y%m")??
-./hydra-report.py  /home/hydra/torque/accounting/$(date -d "3 month ago" "+%Y%m")??
-./hydra-report.py  /home/hydra/torque/accounting/$(date -d "4 month ago" "+%Y%m")??
-./hydra-report.py  /home/hydra/torque/accounting/$(date -d "5 month ago" "+%Y%m")??
-./hydra-report.py  /home/hydra/torque/accounting/$(date -d "6 month ago" "+%Y%m")??'''
+        sh '''python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "1 month ago" "+%Y%m")??
+              python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "2 month ago" "+%Y%m")??
+              python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "3 month ago" "+%Y%m")??
+              python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "4 month ago" "+%Y%m")??
+              python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "5 month ago" "+%Y%m")??
+              python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "6 month ago" "+%Y%m")??'''
       }
     }
     stage('Deploy') {
