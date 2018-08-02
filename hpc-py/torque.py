@@ -161,12 +161,13 @@ def parse_accounting(files):
 
         # Torque date is not ISO 8610, fix that
         matches = GET_DATE.match(date)
-        date_obj = datetime.date(int(matches.group(3)), int(matches.group(1)), int(matches.group(2)))
-        job['date'] = date_obj
-        if date_obj not in acc_data:
-            acc_data[date_obj] = []
+        if matches not None:
+            date_obj = datetime.date(int(matches.group(3)), int(matches.group(1)), int(matches.group(2)))
+            job['date'] = date_obj
+            if date_obj not in acc_data:
+                acc_data[date_obj] = []
 
-        acc_data[date_obj].append(job)
+            acc_data[date_obj].append(job)
 
     return acc_data
 
