@@ -108,7 +108,7 @@ def write_out(string):
 
     # global _FOUT
 
-    print(string, file=_FOUT)
+    print >> _FOUT, string
 
     return 1
 
@@ -123,7 +123,7 @@ def write_log(string):
 
     """
 
-    print(string, file=_FLOG)
+    print >> _FOUT, string
 
     return
 
