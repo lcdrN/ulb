@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Tests') {
       steps {
-        sh 'python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "14 month ago" "+%Y%m")??'
+        sh 'python2.7 hydra-report.py  /home/hydra/torque/accounting/$(date -d "4 month ago" "+%Y%m")??'
       }
     }
     stage('Build') {
