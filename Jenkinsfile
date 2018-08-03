@@ -51,7 +51,12 @@ cp report/$(date -d "5 month ago" "+%Y%m").html /home/hydra/reports/users/monthl
 
 
 cp -r report/$(date -d "6 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m")/
-cp report/$(date -d "6 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m").html'''
+cp report/$(date -d "6 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m").html
+
+rm -rf /home/hydra/reports/users/monthly/$(date -d "7 month ago" "+%Y%m")/
+rm -rf /home/hydra/reports/users/monthly/$(date -d "7 month ago" "+%Y%m").html
+
+'''
       }
     }
   }
