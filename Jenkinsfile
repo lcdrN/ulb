@@ -25,7 +25,8 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh '''mkdir -p /home/hydra/reports/users/monthly
+        sh '''pwd
+        mkdir -p /home/hydra/reports/users/monthly
 
 cp -r report/$(date -d "1 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")/
 cp report/$(date -d "1 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")
