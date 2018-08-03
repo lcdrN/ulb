@@ -27,29 +27,31 @@ pipeline {
       steps {
         sh '''pwd
         mkdir -p /home/hydra/reports/users/monthly
+        
+cp -r report/assets/ /home/hydra/reports/users/monthly/assets/
 
 cp -r report/$(date -d "1 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")/
-cp report/$(date -d "1 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m")
+cp report/$(date -d "1 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "1 month ago" "+%Y%m").html
 
 
 cp -r report/$(date -d "2 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "2 month ago" "+%Y%m")/
-cp report/$(date -d "2 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "2 month ago" "+%Y%m")
+cp report/$(date -d "2 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "2 month ago" "+%Y%m").html
 
 
 cp -r report/$(date -d "3 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "3 month ago" "+%Y%m")/
-cp report/$(date -d "3 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "3 month ago" "+%Y%m")
+cp report/$(date -d "3 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "3 month ago" "+%Y%m").html
 
 
 cp -r report/$(date -d "4 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "4 month ago" "+%Y%m")/
-cp report/$(date -d "4 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "4 month ago" "+%Y%m")
+cp report/$(date -d "4 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "4 month ago" "+%Y%m").html
 
 
 cp -r report/$(date -d "5 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "5 month ago" "+%Y%m")/
-cp report/$(date -d "5 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "5 month ago" "+%Y%m")
+cp report/$(date -d "5 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "5 month ago" "+%Y%m").html
 
 
 cp -r report/$(date -d "6 month ago" "+%Y%m")/ /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m")/
-cp report/$(date -d "6 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m")'''
+cp report/$(date -d "6 month ago" "+%Y%m").html /home/hydra/reports/users/monthly/$(date -d "6 month ago" "+%Y%m").html'''
       }
     }
   }
